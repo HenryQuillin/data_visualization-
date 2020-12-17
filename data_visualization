@@ -1,0 +1,19 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+sns.set_theme(style="ticks", palette="pastel")
+
+# Load the example tips dataset
+
+tips2 = pd.read_csv('tips2.csv')
+
+# Draw a nested boxplot to show bills by day and time
+sns.boxplot(x="day", y="total_bill",
+            hue="smoker", palette=["m", "g"],
+            data=tips2)
+sns.despine(offset=10, trim=True)
+
+plt.show()
+
+
